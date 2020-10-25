@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Manager">
+
+        <menu>
+
+            <item android:title="Employee List"
+                android:icon="@drawable/emplist"
+                android:id="@+id/dor_emplist"
+
+                />
+            <item android:title="Current Tasks"
+                android:icon="@drawable/employee"
+                android:id="@+id/dor_current_task"
+                />
+            <item android:title="Task History"
+                android:icon="@drawable/taskhistory"
+                android:id="@+id/dor_man_taskhistory"
+                />
+            <item android:title="Logout"
+                android:id="@+id/dor_man_logout"
+                android:icon="@drawable/peers"/>
+        </menu>
+    </item>
+
+
+
+</menu>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorButton">#E0A444</color>
+    <color name="colorText">#FFD648</color>
+    <color name="colorgolden">#F1BF46</color>
+    <color name="coloricon">#483915</color>
+    <color name="colordropdown">#FEECB3</color>
+    <color name="colorlightgray">#D3D3D3</color>
+    <color name="light_green">#26B15D</color>
+    <color name="Link_color">#2D3494</color>
+    <color name="heading_color">#2B9860</color>
+    <color name="white">#FFFFFF</color>
+</resources>

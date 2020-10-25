@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".employee_tasks"
+    android:weightSum="7"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    >
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+
+android:background="@drawable/round_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:textSize="40dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Performance"
+            android:textColor="@color/colorButton"
+            />
+    </LinearLayout>
+
+<LinearLayout
+
+    android:layout_weight="3"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/white"
+    >
+    <LinearLayout
+        android:layout_weight="1.5"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:weightSum="3"
+        android:orientation="vertical"
+
+        >
+        <LinearLayout
+            android:layout_marginLeft="50dp"
+            android:weightSum="1.5"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView
+            android:textColor="@color/colorButton"
+            android:textSize="20dp"
+            android:layout_weight="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tasks Completed:"
+            />
+        <TextView
+            android:textColor="@color/colorButton"
+            android:textSize="20dp"
+            android:layout_weight="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total Tasks:"
+            />
+        <TextView
+            android:textColor="@color/colorButton"
+            android:textSize="20dp"
+            android:layout_weight="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Performance Score:"
+            />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_weight="1.5"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:weightSum="3"
+        android:orientation="vertical">
+        <LinearLayout
+            android:weightSum="1.5"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/empPerformance_complitedTask"
+                android:textColor="@color/colorButton"
+                android:textSize="20dp"
+                android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="10"
+                />
+            <TextView
+                android:id="@+id/empPerformance_totalTask"
+                android:textColor="@color/colorButton"
+                android:textSize="20dp"
+                android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="15"
+                />
+            <TextView
+                android:id="@+id/empPerformance_score"
+                android:textColor="@color/colorButton"
+                android:textSize="20dp"
+                android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="7.5/10"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1.5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+</LinearLayout>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@drawable/round_down"
+        >
+        <Button
+
+            android:id="@+id/empPerformance_button"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:textColor="#ffff"
+            android:background="@drawable/button_design"
+            />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

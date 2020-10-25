@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Employee">
+
+        <menu>
+
+            <item android:title="Performance"
+                android:icon="@drawable/peers"
+                android:id="@+id/dor_performance"
+
+                />
+            <item android:title="Tasks"
+                android:icon="@drawable/peers"
+                android:id="@+id/dor_task"
+                />
+            <item android:title="Task History"
+                android:icon="@drawable/peers"
+                android:id="@+id/dor_taskhistory"
+                />
+            <item android:title="Logout"
+                android:id="@+id/dor_logout"
+                android:icon="@drawable/peers"/>
+        </menu>
+    </item>
+
+
+
+</menu>
