@@ -1,4 +1,4 @@
-package com.example.workload;
+package com.example.workload.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,14 +14,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.workload.Model.task;
+import com.example.workload.R;
+import com.example.workload.Manager.manager_task_status;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class MyRvAdapter extends RecyclerView.Adapter<MyRvAdapter.MyViewHolder> implements Filterable {
-    List<Task> ls;
-    List<Task> lsFull;
+    List<task> ls;
+    List<task> lsFull;
     Context c;
-    public MyRvAdapter(List<Task> ls, Context c) {
+
+    public MyRvAdapter(List<task> ls, Context c) {
         this.c = c;
         this.ls = ls;
         lsFull = new ArrayList<>(ls);
@@ -37,7 +42,7 @@ public class MyRvAdapter extends RecyclerView.Adapter<MyRvAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull MyRvAdapter.MyViewHolder holder, final int position) {
-        holder.name.setText(ls.get(position).getName());
+        holder.name.setText(ls.get(position).getTask_title());
         holder.deadline.setText("Deadline: "+ ls.get(position).getDueDate());
 
 //
@@ -47,13 +52,15 @@ public class MyRvAdapter extends RecyclerView.Adapter<MyRvAdapter.MyViewHolder> 
         holder.viewStatus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent obj=new Intent(c,manager_task_status.class);
-
-                obj.putExtra("Name",ls.get(position).getName());
+                Intent obj=new Intent(c, manager_task_status.class);
+                obj.putExtra("id",ls.get(position).getId());
+                obj.putExtra("Name",ls.get(position).getTask_title());
                 obj.putExtra("Description",ls.get(position).getDescription());
                 obj.putExtra("Status",ls.get(position).getStatus());
                 obj.putExtra("Rating",ls.get(position).getRating());
                 obj.putExtra("Image",ls.get(position).getImage());
+                obj.putExtra("due_date",ls.get(position).getDueDate());
+                obj.putExtra("emp_id",ls.get(position).getEmp_id());
                 c.startActivity(obj);
 
             }
@@ -67,7 +74,7 @@ public class MyRvAdapter extends RecyclerView.Adapter<MyRvAdapter.MyViewHolder> 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView name, deadline;
-        View mView; Task mTask; Button viewStatus;
+        View mView; task mTask; Button viewStatus;
         LinearLayout ll;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -80,7 +87,7 @@ public class MyRvAdapter extends RecyclerView.Adapter<MyRvAdapter.MyViewHolder> 
     }
 
     public void refreshList(){
-        lsFull = new ArrayList<Task>(ls);
+        lsFull = new ArrayList<task>(ls);
     }
 
     @Override
@@ -92,23 +99,22 @@ public class MyRvAdapter extends RecyclerView.Adapter<MyRvAdapter.MyViewHolder> 
         @Override
         protected FilterResults performFiltering(CharSequence charSequence) {
 
-//            List<Task> filteredList = new ArrayList<>();
-//
-//            if(charSequence == null || charSequence.length() == 0){
-//                filteredList.addAll(lsFull);
-//            }
-//            else{
-//                String filterPattern = charSequence.toString().toLowerCase().trim();
-//
-//                for(Task c: lsFull){
-//                    if(c.getName().toLowerCase().contains(filterPattern)){
-//                        filteredList.add(c);
-//                    }
-//                }
-//            }
+            List<task> filteredList = new ArrayList<>();
+
+            if(charSequence == null || charSequence.length() == 0){
+                filteredList.addAll(lsFull);
+            }
+            else{
+                String filterPattern = charSequence.toString().toLowerCase().trim();
+
+                for(task c: lsFull){
+                    if(c.getTask_title().toLowerCase().contains(filterPattern)){
+                        filteredList.add(c);
+                    }
+                }
+            }
             FilterResults results = new FilterResults();
-//            results.values = filteredList;
-//
+            results.values = filteredList;
             return results;
         }
 

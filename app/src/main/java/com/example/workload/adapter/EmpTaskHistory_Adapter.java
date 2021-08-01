@@ -1,4 +1,4 @@
-package com.example.workload;
+package com.example.workload.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,15 +10,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.workload.Model.task;
+import com.example.workload.R;
+
 import java.util.List;
 
 
 public class EmpTaskHistory_Adapter extends RecyclerView.Adapter<EmpTaskHistory_Adapter.MyViewHolder> {
 
     private Context c;
-    private List<EmpTaskHist_Model> ls;
+    private List<task> ls;
 
-    public EmpTaskHistory_Adapter(Context c, List<EmpTaskHist_Model> ls) {
+    public EmpTaskHistory_Adapter(Context c, List<task> ls) {
         this.c = c;
         this.ls = ls;
     }
@@ -32,7 +35,7 @@ public class EmpTaskHistory_Adapter extends RecyclerView.Adapter<EmpTaskHistory_
     //holder will contain reference of emptask_histroy_row.xml layout
     @Override
     public void onBindViewHolder(@NonNull final EmpTaskHistory_Adapter.MyViewHolder holder, final int position) {//data is inserted or binded with emptask_histroy_row.xml
-       holder.title.setText(ls.get(position).getTitle());
+       holder.title.setText(ls.get(position).getTask_title());
        holder.status.setText(ls.get(position).getStatus());
        holder.l1.setOnClickListener(new View.OnClickListener() {
            @Override

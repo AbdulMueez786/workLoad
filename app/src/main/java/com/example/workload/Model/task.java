@@ -1,29 +1,50 @@
-package com.example.workload;
+package com.example.workload.Model;
 
-public class Task {
-    String name, description;
+public class task {
+    String id;
+    String task_title, description;
     String dueDate;
-    String employee;
+    String emp_id;
     String status;
     String rating;
     String image;
 
-    public Task(String name, String description, String dueDate, String employee, String status, String rating, String image) {
-        this.name = name;
+    public task(String id, String task_title, String description, String dueDate, String emp_id, String status, String rating, String image) {
+        this.id=id;
+        this.task_title = task_title;
         this.description = description;
         this.dueDate = dueDate;
-        this.employee = employee;
+        this.emp_id = emp_id;
         this.status = status;
         this.rating = rating;
         this.image = image;
     }
+    public task(){
 
-    public String getName() {
-        return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getEmp_id() {
+        return emp_id;
+    }
+
+    public void setEmp_id(String emp_id) {
+        this.emp_id = emp_id;
+    }
+
+    public String getTask_title() {
+        return task_title;
+    }
+
+    public void setTask_title(String task_title) {
+        this.task_title = task_title;
     }
 
     public String getDescription() {
@@ -42,13 +63,6 @@ public class Task {
         this.dueDate = dueDate;
     }
 
-    public String getDueTime() {
-        return employee;
-    }
-
-    public void setDueTime(String employee) {
-        this.employee = employee;
-    }
 
     public String getStatus() {
         return status;

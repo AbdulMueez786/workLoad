@@ -4,32 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".employee_tasks"
+    tools:context=".Employee.employee_tasks"
     android:weightSum="8"
     android:orientation="vertical"
     android:background="@drawable/background"
     >
-    <LinearLayout
-        android:layout_weight="0.5"
-        android:layout_width="match_parent"
-        android:layout_height="50dp">
 
-    </LinearLayout>
     <RelativeLayout
-        android:layout_weight="0.5"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
-        <TextView
-            android:textColor="@color/colorText"
-            android:textSize="40dp"
-            android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/searchbar_profile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/menu"
+            />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/list_search"
+            android:layout_width="230dp"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:padding="10dp"
-            android:text="Your Tasks"
-            >
-        </TextView>
+            android:layout_margin="10dp"
+            android:textSize="14dp"
+            android:hint="Search Peer"
+            android:layout_toRightOf="@+id/searchbar_profile"
+            android:textColor="#434343"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="10dp"
+            android:background="@drawable/searchbox"/>
+
     </RelativeLayout>
+
+
+
+
+
 <LinearLayout
     android:layout_weight="1"
     android:layout_width="match_parent"

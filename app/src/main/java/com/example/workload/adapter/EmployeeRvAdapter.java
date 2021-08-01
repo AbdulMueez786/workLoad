@@ -1,4 +1,4 @@
-package com.example.workload;
+package com.example.workload.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,14 +12,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.workload.Model.employee;
+import com.example.workload.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeRvAdapter extends RecyclerView.Adapter<EmployeeRvAdapter.EmployeeViewHolder> implements Filterable {
-    List<Employee> ls;
-    List<Employee> lsFull;
+    List<employee> ls;
+    List<employee> lsFull;
     Context c;
-    public EmployeeRvAdapter(List<Employee> ls, Context c) {
+    public EmployeeRvAdapter(List<employee> ls, Context c) {
         this.c = c;
         this.ls = ls;
         lsFull = new ArrayList<>(ls);
@@ -35,21 +38,18 @@ public class EmployeeRvAdapter extends RecyclerView.Adapter<EmployeeRvAdapter.Em
 
     @Override
     public void onBindViewHolder(@NonNull EmployeeRvAdapter.EmployeeViewHolder holder, final int position) {
-        holder.name.setText(ls.get(position).getName());
+        holder.name.setText(ls.get(position).getUsername());
         holder.job.setText(ls.get(position).getDesignation());
 
         holder.mEmployee = ls.get(position);
 
     }
 
-    @Override
-    public int getItemCount() {
-        return ls.size();
-    }
+
 
     public class EmployeeViewHolder extends RecyclerView.ViewHolder {
         TextView name, job;
-        View mView; Employee mEmployee;
+        View mView; employee mEmployee;
         LinearLayout ll;
         public EmployeeViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -60,45 +60,65 @@ public class EmployeeRvAdapter extends RecyclerView.Adapter<EmployeeRvAdapter.Em
         }
     }
 
+
+
     public void refreshList(){
-        lsFull = new ArrayList<Employee>(ls);
+        lsFull = new ArrayList<employee>(ls);
     }
 
     @Override
-    public Filter getFilter() {
-        return contactFilter;
+    public int getItemCount() {
+        return ls.size();
     }
 
-    private Filter contactFilter = new Filter() {
-        @Override
-        protected FilterResults performFiltering(CharSequence charSequence) {
+    public void addlist(){
+        lsFull =new ArrayList<employee>(ls);
+    }
 
-//            List<Task> filteredList = new ArrayList<>();
-//
-//            if(charSequence == null || charSequence.length() == 0){
-//                filteredList.addAll(lsFull);
-//            }
-//            else{
-//                String filterPattern = charSequence.toString().toLowerCase().trim();
-//
-//                for(Task c: lsFull){
-//                    if(c.getName().toLowerCase().contains(filterPattern)){
-//                        filteredList.add(c);
-//                    }
-//                }
-//            }
+
+    @Override
+    public Filter getFilter() {
+        return exampleFilter;
+    }
+
+
+    private Filter exampleFilter=new Filter() {
+
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<employee> filteredList = new ArrayList<>();
+
+            System.out.println("Hjhjfhjsdhjsfdh"+constraint);
+
+            if (constraint.equals(null) || constraint.length() == 0) {
+                filteredList.addAll(lsFull);
+                System.out.println("Working_______________");
+               // System.out.println(contact_list_copy);
+            } else {
+                System.out.println("Else Block");
+                String filterPattern = constraint.toString().toLowerCase().trim();
+                for (employee item :lsFull) {
+                    System.out.println(filterPattern);
+                    System.out.println("");
+                    if (item.getUsername().toLowerCase().contains(filterPattern)) {
+                        filteredList.add(item);
+                    }
+                }
+            }
             FilterResults results = new FilterResults();
-//            results.values = filteredList;
-//
+            results.values = filteredList;
             return results;
         }
-
         @Override
         protected void publishResults(CharSequence charSequence, FilterResults results) {
             ls.clear();
+            System.out.println("Result");
             ls.addAll((List) results.values);
             notifyDataSetChanged();
         }
     };
+
+
+
 
 }

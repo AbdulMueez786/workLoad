@@ -42,7 +42,7 @@
             <EditText
 
                 android:background="@drawable/edit_text_background"
-                android:id="@+id/activity3_phoneo"
+                android:id="@+id/company_code"
                 android:padding="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"

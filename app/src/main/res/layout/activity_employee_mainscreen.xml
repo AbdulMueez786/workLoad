@@ -7,7 +7,7 @@
     android:id="@+id/drawer_layout"
     android:layout_height="match_parent"
     android:background="@drawable/background2"
-    tools:context=".employee_mainscreen"
+    tools:context=".Employee.employee_mainscreen"
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"

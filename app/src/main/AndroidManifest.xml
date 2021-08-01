@@ -2,27 +2,36 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.workload">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
+        android:name=".MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".manager_history"></activity>
-        <activity android:name=".emptask_history"></activity>
-        <activity android:name=".employee_mainscreen"></activity>
-        <activity android:name=".employee_tasks"></activity>
-        <activity android:name=".employee_performance" />
-        <activity android:name=".employee_profile" />
+        <activity android:name=".Employee.Employee_task_detail"></activity>
+        <activity android:name=".create_profile"></activity>
+        <activity android:name=".Manager.manager_history" />
+        <activity android:name=".Employee.emptask_history" />
+        <activity android:name=".Employee.employee_mainscreen"></activity>
+        <activity android:name=".Employee.employee_tasks" />
+        <activity android:name=".Employee.employee_performance"></activity>
+        <activity android:name=".Employee.employee_profile"></activity>
         <activity android:name=".codeVerifier" />
         <activity android:name=".signup" />
         <activity android:name=".login" />
-        <activity android:name=".manager_task_creation"></activity>
-        <activity android:name=".manager_task_status" />
-        <activity android:name=".employee_list" />
-        <activity android:name=".manager_tasklist" />
-        <activity android:name=".manager_mainscreen" />
+        <activity android:name=".Manager.manager_task_creation"></activity>
+        <activity android:name=".Manager.manager_task_status">
+        </activity>
+        <activity android:name=".Employee.employee_list"></activity>
+        <activity android:name=".Manager.manager_tasklist">
+        </activity>
+        <activity android:name=".Manager.manager_mainscreen" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,6 +39,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver android:name=".MyBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
