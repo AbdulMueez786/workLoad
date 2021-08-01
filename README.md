@@ -5,7 +5,6 @@
  that pic and give rating to the employee's work.
  
 Technologies:
-
 Android Studio - java,
 Firebase,
 OneSignal,
