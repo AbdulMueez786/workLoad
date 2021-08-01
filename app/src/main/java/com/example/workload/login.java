@@ -43,6 +43,7 @@ public class login extends AppCompatActivity {
     @Override
     protected void onStart(){
         super.onStart();
+        //S
 
         login_firebaseUser=FirebaseAuth.getInstance().getCurrentUser();
 
