@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".Employee.Employee_task_detail"
+android:background="@drawable/background"
+android:orientation="vertical"
+    >
+<ImageView
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:background="@drawable/menu"
+    android:layout_margin="20dp"
+    />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Task Status"
+    android:layout_gravity="center"
+    android:textSize="30dp"
+    />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/epic_button"
+    >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="40dp"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Task Name"
+            android:textSize="20dp"
+            android:textColor="#000"
+            android:layout_marginTop="50dp"
+            />
+        <TextView
+            android:id="@+id/task_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cleaning"
+            android:textSize="15dp"
+            android:textColor="#E0A444"
+            android:layout_marginTop="10dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textSize="20dp"
+            android:textColor="#000"
+            android:layout_marginTop="20dp"
+            />
+        <TextView
+            android:id="@+id/task_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="abcdefghijkl"
+            android:textSize="15dp"
+            android:textColor="#E0A444"
+            android:layout_marginTop="10dp"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:weightSum="5"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status"
+                    android:textSize="20dp"
+                    android:textColor="#000"
+                    />
+                <TextView
+                    android:id="@+id/task_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="completed"
+                    android:textSize="15dp"
+                    android:textColor="#E0A444"
+                    android:layout_marginTop="10dp"
+                    />
+            </LinearLayout>
+            <Button
+                android:id="@+id/upload_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="Upload Image"
+                android:backgroundTint="#E0A444"
+                android:textColor="#fff"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deadline"
+            android:textSize="20dp"
+            android:textColor="#000"
+            android:layout_marginTop="20dp"
+            />
+        <TextView
+            android:id="@+id/task_deadline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deadline"
+            android:textSize="15dp"
+            android:textColor="#E0A444"
+            android:layout_marginTop="10dp"
+            />
+
+    </LinearLayout>
+</LinearLayout>
+
+<Button
+    android:id="@+id/task_submit"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:backgroundTint="#E0A444"
+    android:text="Submit"
+    android:textColor="#FFF"
+    android:textSize="20dp"
+    android:layout_marginTop="20dp"
+    android:layout_gravity="center_horizontal"
+    />
+
+
+</LinearLayout>
